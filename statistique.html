@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darck dashboard</title>
+   <link rel="stylesheet" href="css/line-awesome.min.css">
+   <link rel="stylesheet" href="css/morris.css">   
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- start sidebar -->
+    <div class="sidebar">
+        <div class="brand">
+            <span class="las la-graduation-cap"></span>
+            <h3>Formation</h3>
+        </div>
+        <div class="sidemenu">
+            
+            <ul>
+                <li>
+                    <a href="#" class="chiox">
+                        <span class="la la-home"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/index.html" class="chiox">
+                        <span class="la la-check-circle"></span>
+                        <span>Gere les inscription</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="chiox  active">
+                        <span class="la la-chart-pie"></span>
+                        <span>Statistiques</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- start main content -->
+    <div class="main-content">
+
+        <header>
+            <label for="" class="menu-toggler">
+                <span class="las la-bars"></span>
+            </label>
+            <div class="search">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Inter keyword">
+            </div>
+            <div class="head-icons">
+                <a href="/listetab" ><span class="las la-bell"><c:if test="${nombreEcolesNonValide!=0}"><span class="notification">6</span></c:if></span></a>
+                <span class="Profile"><i class="las la-user"></i>&nbsp;&nbsp;<i>Admin</i></span>
+            </div>
+            
+            <div class="dropDown">
+            
+                <li><a href="editAdmin/${sessionScope.nom}">modifier compte</a></li>
+                <li><a href="/LogoutAdmin">desinscrire</a></li>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon follow">
+                        <span class="las la-users"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>8</h2>
+                        <small>Total Apprennant</small>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-icon ecoles">
+                        <span class="las la-university"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>20</h2>
+                        <small>Total Ecoles</small>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <div class="card-icon formateur">
+                        <span class="las la-chalkboard-teacher"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>13</h2>
+                        <small>Total Formateur</small>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="chart-grid">
+                <div class="chat-follow">
+                    <div class="chart-head">
+                        <h2>les Apprenant</h2>
+                        <span class="las la-cog"></span>
+                    </div>
+                    <div id="myfirstchart" style="height: 350px;"></div>
+                </div>
+
+                <div class="chart-sales">
+                    <div class="chart-head">
+                        <h2>Statistiques General</h2>
+                        <span class="las la-ellipsis-"></span>
+                    </div>
+                    <div id="donut-example" style="height: 350px;"></div>
+                </div>
+                <div id="bar-example" style="height: 350px;"></div>
+            </div>
+        </main>
+    </div>
+    <label class="close-mobile-menu" for="menu-toggle"></label>
+    
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="js/raphael-min.js"></script>
+    
+   <script src="js/morris.js"></script>
+   <script src="js/script.js"></script>
+    <script type="text/javascript">
+    Morris.Donut({
+        element: 'donut-example',
+        data: [
+        {label: "Nombre des Ecoles", value: 5},
+        {label: "Nombre des Apprenant", value: 8},
+        {label: "Nombre des Formateur", value: 2}
+        ],colors:['#ffb606','#0072f2','#f42a26'],
+        labelColor: '#ffffff'
+        
+      });
+    </script>
+</body>
+</html>
